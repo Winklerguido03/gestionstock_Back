@@ -10,9 +10,10 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_producto")
     private Long idProducto;
 
-    @Column(name="nombreProducto",nullable = false)
+    @Column(name="nombre_producto",nullable = false)
     private String nombreProducto;
 
     @Column(name="precio_compra",nullable = false)
@@ -34,4 +35,33 @@ public class Producto {
     @JoinColumn(name = "proveedor_idProveedor", nullable = false)
     private Proveedor proveedor;
 
+    public Long getIdProducto() {
+        return idProducto;
+    }
+
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+
+    public BigDecimal getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public BigDecimal getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
 }

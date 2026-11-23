@@ -9,13 +9,14 @@ public class Proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProducto;
+    @Column(name="id_proveedor")
+    private Long idProveedor;
 
-    @Column(name="nombreProveedor",nullable = false)
+    @Column(name="nombre_proveedor",nullable = false)
     private String nombreProveedor;
 
     @Column(name="telefono",nullable = false)
-    private int telefono;
+    private String telefono;
 
     @Column(name = "email", unique = true, nullable = false)
     @Email
@@ -23,4 +24,12 @@ public class Proveedor {
 
     @Column(name="direccion",nullable = false)
     private String direccion;
+
+    public Long getIdProveedor() {
+        return idProveedor;
+    }
+
+    public String getNombreProveedor() {
+        return nombreProveedor;
+    }
 }
