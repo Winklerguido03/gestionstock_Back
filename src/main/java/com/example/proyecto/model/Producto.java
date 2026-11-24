@@ -64,4 +64,7 @@ public class Producto {
     public Proveedor getProveedor() {
         return proveedor;
     }
+
+    public void setStock(int stock) {
+    }
 }

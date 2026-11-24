@@ -24,4 +24,18 @@ public class Movimiento {
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuario;
 
+    public void setTipo(String tipo) {
+    }
+
+    public void setCantidad(Integer cantidad) {
+    }
+
+    public void setMotivo(String motivo) {
+    }
+
+    public void setProducto(Producto producto) {
+    }
+
+    public void setUsuario(Usuario usuario) {
+    }
 }
