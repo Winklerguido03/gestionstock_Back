@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Service
 public class MovimientoServiceImpl {
@@ -52,15 +51,20 @@ public class MovimientoServiceImpl {
 
         String tipo = dto.tipo().toUpperCase();
 
-        if ("ENTRADA".equals(tipo)) {
+        Tipo tipoEnum;
+        try {
+            tipoEnum = Tipo.valueOf(dto.tipo().toUpperCase());
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Tipo de movimiento inválido (use INGRESO o EGRESO)");
+        }
+
+        if (tipoEnum == Tipo.INGRESO) {
             producto.setStock(producto.getStock() + dto.cantidad());
-        } else if ("SALIDA".equals(tipo)) {
+        } else if (tipoEnum == Tipo.EGRESO) {
             if (producto.getStock() < dto.cantidad()) {
                 throw new IllegalArgumentException("Stock insuficiente. Disponible: " + producto.getStock());
             }
             producto.setStock(producto.getStock() - dto.cantidad());
-        } else {
-            throw new IllegalArgumentException("Tipo de movimiento inválido (use ENTRADA o SALIDA)");
         }
 
         // 1. Actualizar el stock del producto
