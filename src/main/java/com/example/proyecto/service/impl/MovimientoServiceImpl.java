@@ -11,6 +11,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Service
 public class MovimientoServiceImpl {
 
@@ -64,6 +67,7 @@ public class MovimientoServiceImpl {
         movimiento.setMotivo(dto.motivo());
         movimiento.setProducto(producto);
         movimiento.setUsuario(usuario);
+        movimiento.setFecha(LocalDate.now());
 
         movimientoRepository.save(movimiento);
     }

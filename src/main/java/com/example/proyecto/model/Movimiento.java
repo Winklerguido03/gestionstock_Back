@@ -38,4 +38,6 @@ public class Movimiento {
 
     public void setUsuario(Usuario usuario) {
     }
+
+    public void setFecha (LocalDate fecha){}
 }
