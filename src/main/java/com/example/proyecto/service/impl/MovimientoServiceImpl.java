@@ -6,6 +6,8 @@ import com.example.proyecto.model.DetalleMovimiento;
 import com.example.proyecto.model.Movimiento;
 import com.example.proyecto.model.Producto;
 import com.example.proyecto.model.Usuario;
+
+import com.example.proyecto.repository.DetalleMovimientoRepository;
 import com.example.proyecto.repository.MovimientoStockRepository;
 import com.example.proyecto.repository.ProductoRepository;
 import com.example.proyecto.repository.UsuarioRepository;
