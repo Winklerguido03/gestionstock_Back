@@ -22,4 +22,17 @@ public class DetalleMovimiento {
     @ManyToOne
     @JoinColumn(name = "producto_idProducto", nullable = false)
     private Producto producto;
+
+
+    public void setMovimiento(Movimiento movimientoGuardado) {
+        this.movimiento=movimientoGuardado;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto=producto;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad=cantidad;
+    }
 }

@@ -24,20 +24,15 @@ public class Movimiento {
     @JoinColumn(name = "usuario_idUsuario", nullable = false)
     private Usuario usuario;
 
-    public void setTipo(String tipo) {
-    }
-
-    public void setCantidad(Integer cantidad) {
-    }
-
-    public void setMotivo(String motivo) {
-    }
-
-    public void setProducto(Producto producto) {
+    public void setTipo(Tipo tipo) {
+        this.tipo=tipo;
     }
 
     public void setUsuario(Usuario usuario) {
+        this.usuario=usuario;
     }
 
-    public void setFecha (LocalDate fecha){}
+    public void setFecha (LocalDate fecha){
+        this.fecha=fecha;
+    }
 }
