@@ -68,4 +68,24 @@ public class Producto {
     public void setStock(int stock) {
         this.stock=stock;
     }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto=nombreProducto;
+    }
+
+    public void setPrecioCompra(BigDecimal precioCompra) {
+        this.precioCompra=precioCompra;
+    }
+
+    public void setPrecioVenta(BigDecimal precioVenta) {
+        this.precioVenta=precioVenta;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria=categoria;
+    }
+
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor=proveedor;
+    }
 }
